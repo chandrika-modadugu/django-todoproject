@@ -1,0 +1,29 @@
+{% extends 'todoapp/base.html' %}
+{%block title%}
+Todo-ViewTask
+{%endblock title%}
+
+{%block content%}
+    <h1>Welcome to View Tasks page</h1>
+    <h3 class="bg-warning text-light py-2 rounded text-center">My Tasks</h3>
+
+  <ul class="list-group ">
+    {% if tasks%}
+    {% for t in tasks %}
+      <li class="list-group-item float-right">
+        {% if t.completed %}
+        <strong style="color:Green">{{t.Title}}</strong>
+        {%else%}
+        <strong>{{t.Title}}</strong>
+      {%endif%}
+      <div style="float: right">
+           <a href="{% url 'todoapp:edittask' t.user t.Title %}" class="btn btn-sm btn-info">Update</a>
+            <a href="{% url 'todoapp:deletetask' t.user t.Title %}" class="btn btn-sm btn-danger">Delete</a>
+         </div>
+      </li>
+    {%endfor%}
+    {% else %}
+      <h1>no tasks found</h1>
+    {% endif %}
+  </ul>
+{%endblock content%}

@@ -1,0 +1,21 @@
+{% extends 'todoapp/base.html' %}
+{%block title%}
+Todo-EditTask
+{%endblock title%}
+
+{%block content%}
+<div class="container">
+  <div class="jumbotron">
+    <h1>welcome to edit task page</h1>
+    <form  method="POST">
+      {% csrf_token %}
+      {{ edit_Task.as_p }}
+      <input type="submit" name="edit" value="SUBMIT">
+      <input type="submit" name="delete" value="DELETE">
+
+    </form>
+  </div>
+
+</div>
+
+  {%endblock content%}

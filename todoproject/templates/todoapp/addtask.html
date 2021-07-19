@@ -1,0 +1,17 @@
+{% extends 'todoapp/base.html' %}
+{%block title%}
+Todo-AddTask
+{%endblock title%}
+
+{%block content%}
+<div class="jumbotron">
+  <div class="container">
+    <h1>welcome to add taskpage</h1>
+    <form  method="POST">
+      {% csrf_token %}
+      {{ task_form.as_p }}
+      <input type="submit" name="" value="SUBMIT">
+    </form>
+  </div>
+</div>
+    {%endblock content%}

@@ -1,0 +1,23 @@
+{% extends 'todoapp/base.html' %}
+{%block title%}
+Todo Home
+{%endblock title%}
+
+{%block content%}
+<div class="card">
+    <div class="card-header">
+        <h1 class="text-center">ToDo App</h1>
+    </div>
+<div class="container">
+  <div class="jumbotron">
+      <h2 class="text-center"> Manage your Tasks</h2>
+      <!--
+      <div class="text-center">
+      <a href="{%url 'todoapp:AddTask' %}" class="btn btn-default btn-lg text-center">Add new Task</a>
+      <a href="{%url 'todoapp:ViewTask' %}" class="btn btn-default btn-lg text-center">Manage Tasks</a>
+</div>-->
+  </div>
+</div>
+
+
+{%endblock content%}

@@ -1,0 +1,18 @@
+{% extends 'todoapp/base.html' %}
+{%block title%}
+Todo Project
+{%endblock title%}
+
+{%block content%}
+<div class="jumbotron">
+  <h1>welcome to Todo Project</h1>
+  {% if user.is_authenticated %}
+    <h2>Manage your Tasks {{ user.username }}!</h2>
+    <a class="btn btn-default btn-lg text-center" href="{% url 'todoapp:ViewTask' user.username %}">view your Tasks</a>
+    
+    <a class="btn btn-default btn-lg text-center" href="{% url 'todoapp:AddTask' user.username %}">Add new Task</a>
+{% else %}
+    <h2>Welcome to the site!</h2>
+{% endif %}
+</div>
+{%endblock%}
